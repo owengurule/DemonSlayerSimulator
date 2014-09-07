@@ -1,0 +1,6 @@
+C:\Users\Technologist\Documents\GITHUB\DemonSlayerSimulator\DemonSlayerSimulator\bin\Debug\DemonSlayerSimulator.exe.config
+C:\Users\Technologist\Documents\GITHUB\DemonSlayerSimulator\DemonSlayerSimulator\obj\Debug\DemonSlayerSimulator.csprojResolveAssemblyReference.cache
+C:\Users\Technologist\Documents\GITHUB\DemonSlayerSimulator\DemonSlayerSimulator\bin\Debug\DemonSlayerSimulator.exe
+C:\Users\Technologist\Documents\GITHUB\DemonSlayerSimulator\DemonSlayerSimulator\bin\Debug\DemonSlayerSimulator.pdb
+C:\Users\Technologist\Documents\GITHUB\DemonSlayerSimulator\DemonSlayerSimulator\obj\Debug\DemonSlayerSimulator.exe
+C:\Users\Technologist\Documents\GITHUB\DemonSlayerSimulator\DemonSlayerSimulator\obj\Debug\DemonSlayerSimulator.pdb
