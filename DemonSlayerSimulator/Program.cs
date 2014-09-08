@@ -39,14 +39,14 @@ namespace DemonSlayerSimulator
             int crossAttack = 2;
             int holyWater = 3;
 
-            int scytheSlashDamage = 100;
+
 
             while (playerHealth > 0 || demonHealth > 0);
             {
                 Random rng = new Random();
 
                 int userNum;
-                Console.WriteLine("Enter 1 to perform a scytheSLash. /n Enter 2 for crossAttack");
+                Console.WriteLine("Enter 1 to perform a scytheSLash. /n Enter 2 for crossAttack. /n Enter 3 to use Holy Water");
                 userNum = Convert.ToInt32(Console.ReadLine());
 
 
@@ -81,11 +81,7 @@ namespace DemonSlayerSimulator
                         playerHealth = playerHealth + 100;
                     }
                 }
-                else if (demonHealth <= 0)
-                {
-                    Console.WriteLine("Congratulations you win");
-
-                }
+                
 
 
                 else if (randomNum > 95)
@@ -102,7 +98,7 @@ namespace DemonSlayerSimulator
                 else if (randomNum < 85 && randomNum > 75) 
                 {
                     playerHealth = playerHealth - 250;
-                    Console.WriteLine("The demon slashes his saw blade like claws in a flurry striking you several times");
+                    Console.WriteLine("The demon slashes his saw blade like claws in a flurry, striking you several times");
                 }
                 else if (randomNum < 75 && randomNum > 50)
                 {
@@ -120,7 +116,16 @@ namespace DemonSlayerSimulator
                         demonHealth = demonHealth + 400;
                     Console.WriteLine ("The demon lets out a howl that burns your brain and sucks the life right out of you, dealing massive amounts of damage and healing for the amount of damage done");
                 }
+                else if (demonHealth <= 0)
+                {
+                    Console.WriteLine("Congratulations you win");
 
+                }
+                else if (playerHealth <= 0)
+                {
+                    Console.WriteLine("You fail and will rot for eternity");
+
+                }
             }
 
 
