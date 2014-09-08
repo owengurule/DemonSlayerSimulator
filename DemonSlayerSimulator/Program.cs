@@ -11,14 +11,16 @@ namespace DemonSlayerSimulator
         static void Main(string[] args)
         {
 
-            
 
+            players();
+
+            Console.ReadKey();
 
 
 
         }
         //1.Create a function to hold information on the player and opponent as well as commands.
-        static void players(string demon, String player)
+        static void players()
         {
 
 
@@ -29,11 +31,7 @@ namespace DemonSlayerSimulator
             int demonHealth = 666;
 
 
-            Random rng = new Random();
 
-            int userNum;
-            Console.WriteLine("Enter 1 to perform a scytheSLash. /n Enter 2 for crossAttack");
-            userNum = Convert.ToInt32(Console.ReadLine());
            
             //player attacks
             
@@ -41,37 +39,46 @@ namespace DemonSlayerSimulator
             int crossAttack = 2;
             int holyWater = 3;
 
-            int randomNum = rng.Next(1, 101);
+            int scytheSlashDamage = 100;
 
-            while (playerHealth >= 0 || demonHealth >=0);
+            while (playerHealth > 0 || demonHealth > 0);
             {
+                Random rng = new Random();
 
+                int userNum;
+                Console.WriteLine("Enter 1 to perform a scytheSLash. /n Enter 2 for crossAttack");
+                userNum = Convert.ToInt32(Console.ReadLine());
+
+
+
+                int randomNum = rng.Next(1, 101);
 
                 if (userNum == 1)
                 {
-                   if (randomNum > 30)
-                   {
-                       Console.WriteLine(demonHealth - 100);
-                   }
+                    if (randomNum > 30)
+                    {
+                        demonHealth = demonHealth - 100;
+                    }
                 }
                 else if (userNum == 2)
                 {
                     if (randomNum > 0)
                     {
-                        Console.WriteLine(demonHealth - 60);
-                        
-                        Console.WriteLine(playerHealth + 10);
+
+                        demonHealth = demonHealth - 60;
+                        playerHealth = playerHealth + 20;
+
                     }
                 }
                 else if (userNum == 3)
                 {
                     if (randomNum >= 70)
                     {
-                        Console.WriteLine(playerHealth + 200);
+                        playerHealth = playerHealth + 200;
                     }
                     else if (randomNum <= 70)
                     {
-                        Console.WriteLine(playerHealth + 100);
+                        playerHealth = playerHealth + 100;
                     }
                 }
                 else if (demonHealth <= 0)
@@ -81,6 +88,38 @@ namespace DemonSlayerSimulator
                 }
 
 
+                else if (randomNum > 95)
+                {
+                    playerHealth = playerHealth - 1000000000;
+
+                    Console.WriteLine("The demon tears off your head");
+                }
+                else if (randomNum < 95 && randomNum > 85) 
+                {
+                    playerHealth = playerHealth - 300;
+                    Console.WriteLine("The demon lashes out and sinks his long sword sharp teeth into your neck");
+                }
+                else if (randomNum < 85 && randomNum > 75) 
+                {
+                    playerHealth = playerHealth - 250;
+                    Console.WriteLine("The demon slashes his saw blade like claws in a flurry striking you several times");
+                }
+                else if (randomNum < 75 && randomNum > 50)
+                {
+                    playerHealth = playerHealth - 175;
+                    Console.WriteLine ("The demon hits you with his heavy, spikey tail");
+                }
+                else if (randomNum < 50 && randomNum > 10)
+                {
+                    playerHealth = playerHealth - 40;
+                    Console.WriteLine ("The demon stomps knocking you on the ground momentarily and doing injurying you slightly");
+                }
+                else if (randomNum < 10 && randomNum > 1)
+                {
+                    playerHealth = playerHealth - 400;
+                        demonHealth = demonHealth + 400;
+                    Console.WriteLine ("The demon lets out a howl that burns your brain and sucks the life right out of you, dealing massive amounts of damage and healing for the amount of damage done");
+                }
 
             }
 
